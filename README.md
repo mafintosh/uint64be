@@ -6,6 +6,8 @@ Encode / decode big endian unsigned 64 bit integers
 npm install uint64be
 ```
 
+[![build status](http://img.shields.io/travis/mafintosh/uint64be.svg?style=flat)](http://travis-ci.org/mafintosh/uint64be)
+
 ## Usage
 
 ``` js
