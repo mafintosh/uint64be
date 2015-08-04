@@ -15,6 +15,11 @@ var buf = uint64be.encode(42) // returns a 8 byte buffer with 42 encoded
 console.log(uint64be.decode(buf)) // returns 42
 ```
 
+## Notice
+
+Javascript (currently) only supports integers up to `2^53 - 1` without any
+loss of precision so beware of this if you encode / decode any integers larger than that.
+
 ## API
 
 #### `buffer = uint64be.encode(num, [buffer], [offset])`
