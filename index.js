@@ -19,9 +19,6 @@ exports.encode = function (num, buf, offset) {
 exports.decode = function (buf, offset) {
   if (!offset) offset = 0
 
-  if (!buf) buf = new Buffer(4)
-  if (!offset) offset = 0
-
   var top = buf.readUInt32BE(offset)
   var rem = buf.readUInt32BE(offset + 4)
 
