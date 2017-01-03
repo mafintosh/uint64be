@@ -1,4 +1,4 @@
-var UINT_32_MAX = 0xffffffff
+var UINT_32_MAX = Math.pow(2, 32)
 
 exports.encodingLength = function () {
   return 8
