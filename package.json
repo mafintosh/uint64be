@@ -3,10 +3,13 @@
   "version": "2.0.1",
   "description": "Encode / decode big endian unsigned 64 bit integers",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "buffer-alloc": "^1.1.0"
+  },
   "devDependencies": {
     "standard": "^5.0.0",
-    "tape": "^4.0.2"
+    "tape": "^4.0.2",
+    "buffer-from": "^1.0.0"
   },
   "repository": {
     "type": "git",
