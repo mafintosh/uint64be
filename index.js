@@ -1,17 +1,15 @@
-var bufferAlloc = require('buffer-alloc')
-
-var UINT_32_MAX = Math.pow(2, 32)
+const UINT_32_MAX = Math.pow(2, 32)
 
 exports.encodingLength = function () {
   return 8
 }
 
 exports.encode = function (num, buf, offset) {
-  if (!buf) buf = bufferAlloc(8)
+  if (!buf) buf = Buffer.allocUnsafe(8)
   if (!offset) offset = 0
 
-  var top = Math.floor(num / UINT_32_MAX)
-  var rem = num - top * UINT_32_MAX
+  const top = Math.floor(num / UINT_32_MAX)
+  const rem = num - top * UINT_32_MAX
 
   buf.writeUInt32BE(top, offset)
   buf.writeUInt32BE(rem, offset + 4)
@@ -21,8 +19,8 @@ exports.encode = function (num, buf, offset) {
 exports.decode = function (buf, offset) {
   if (!offset) offset = 0
 
-  var top = buf.readUInt32BE(offset)
-  var rem = buf.readUInt32BE(offset + 4)
+  const top = buf.readUInt32BE(offset)
+  const rem = buf.readUInt32BE(offset + 4)
 
   return top * UINT_32_MAX + rem
 }
